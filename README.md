@@ -1,90 +1,107 @@
 # SC1015 Mini Project
 # 🏨 Hotel Reservation Cancellation Prediction
 
-## 📌 Project Overview
-This project investigates patterns behind hotel reservation cancellations and builds a machine learning model to **predict cancellations in advance** using booking-time features. The goal is to help hotels shift from reactive to proactive management of cancellations, improving both operational efficiency and revenue retention.
+## ✅ 1. Problem Definition 
+Our group defined the problem of predicting hotel reservation cancellations using a real-world dataset of 18,000+ bookings.  
+Instead of merely describing booking trends, we **framed a predictive classification problem**:  
+> *Can we predict whether a hotel reservation will be cancelled, using only features available at the time of booking?*
+
+This business-focused problem allows for actionable strategies in overbooking, staffing, and revenue management.
 
 ---
 
-## 🎯 Objectives
-1. Identify which booking features are most strongly associated with cancellations.
-2. Develop and evaluate predictive models to accurately classify high-risk bookings.
+## 🧹 2. Data Preparation & Cleaning
+We used a dataset with 18 variables related to guest bookings. Key cleaning steps included:
+- **Dropping missing values** (resulting in 18,137 clean records)
+- **Encoding categorical variables** for model compatibility
+- **Focusing only on booking-time features** to ensure real-world applicability
+- Validating feature types and checking for outliers in numerical columns
+
+These steps ensured the dataset was suitable for both statistical testing and machine learning.
 
 ---
 
-## 📊 Dataset
-- **Source**: `train__dataset.csv`
-- **Rows**: 18,137 hotel bookings
-- **Target**: `booking_status` (0 = Not Cancelled, 1 = Cancelled)
-- **Key features used**:
-  - `lead_time`
-  - `avg_price_per_room`
-  - `no_of_special_requests`
-  - `room_type_reserved`
-  - `arrival_month`, `customer_type`, `market_segment_type`
+## 📊 3. Exploratory Data Analysis & Visualization 
+We explored and visualized multiple patterns related to cancellations:
+- **Lead time**: Longer lead times = higher cancellation rates  
+- **Special requests**: More requests = fewer cancellations  
+- **Average price**: Very high or very low prices → more cancellations  
+- **Room type and seasonality** also showed noticeable trends
+
+We used violin plots, histograms, count plots, and boxplots to surface these insights.  
+Statistical tests (Spearman, Chi-Square, and Cramér’s V) were also applied to **quantify associations**.
 
 ---
 
-## 🧪 Data Analysis & Key Insights
-- **Longer lead times** → Higher cancellation risk (ρ = 0.41)
-- **More special requests** → Lower risk, indicating commitment (ρ = -0.25)
-- **Price extremes** → More cancellations, due to sensitivity or regret
-- **Seasonality** → Certain months have noticeably higher cancellation rates
-- **Repeated guests** → More reliable, fewer cancellations
+## 🤖 4. Machine Learning Techniques 
+We implemented and compared **five classification models**:
+- Decision Tree  
+- Linear Regression (adapted for binary outcomes)  
+- Random Forest  
+- Support Vector Machine  
+- Gradient Boosting (best performance)
 
-Statistical tests used:
-- **Spearman Correlation** (for ranked variables)
-- **Chi-Square & Cramér’s V** (for categorical associations)
+Best results from Gradient Boosting:
+- **Accuracy:** 82%  
+- **Precision (Cancelled class):** 80%  
+- **Recall (Cancelled class):** 61%
 
----
-
-## 🤖 Models Used
-We evaluated five machine learning models:
-
-| Model                | Accuracy | Precision (Cancelled) | Recall (Cancelled) |
-|----------------------|----------|------------------------|---------------------|
-| Decision Tree        | 79%      | 73%                    | 60%                 |
-| Linear Regression    | 79%      | 76%                    | 51%                 |
-| Random Forest        | 81%      | 82%                    | 54%                 |
-| Support Vector Machine (SVM) | 78% | 63%               | 76%                 |
-| **Gradient Boosting**| **82%**  | **80%**                | **61%**             |
-
-✅ **Gradient Boosting** was the best-performing model overall.
+We used ROC and Precision-Recall curves for performance evaluation. The top 3 predictive features were:
+- `lead_time`
+- `avg_price_per_room`
+- `no_of_special_requests`
 
 ---
 
-## 🔍 Top Predictive Features
-1. **Lead Time**: Longer time before check-in → more cancellations  
-2. **No. of Special Requests**: More requests → lower cancellations  
-3. **Average Price Per Room**: Price-sensitive guests more likely to cancel
+## 📌 5. Data-Driven Insights & Recommendations 
+Our analysis revealed actionable insights:
+- **Longer lead times** → higher risk of cancellations  
+- **Guests with special requests** are less likely to cancel  
+- **Extreme pricing** (very high or low) correlates with more cancellations  
+- **Repeated guests** are more reliable  
+
+### Recommendations:
+- Use cancellation scores to inform **smart overbooking strategies**  
+- Send **reminders or promotions** to long-lead-time, no-request guests  
+- Adjust staffing based on **seasonality and risk forecasts**
 
 ---
 
-## 🧠 Key Takeaways
-- Cancellations follow **predictable patterns** based on booking behavior.
-- **Early prediction** enables smarter overbooking, targeted guest outreach, and better staffing.
-- Models like Gradient Boosting offer **reliable accuracy with interpretable features**.
+## 🎤 6. Final Presentation & Overall Quality 
+We delivered a concise 10-minute presentation covering:
+- Problem framing  
+- Data exploration  
+- Modeling approach  
+- Evaluation metrics  
+- Final insights & business recommendations
+
+Presentation was supported by visuals, clean plots, and a structured narrative aligned to the business problem.
+
+---
+
+## 🚀 7. Learning & Going Beyond 
+As a team, we went beyond course requirements by:
+- **Applying three statistical tests** to strengthen EDA (Spearman, Chi-Square, Cramér’s V)
+- Using **multiple evaluation metrics** beyond accuracy (precision, recall, AUC)  
+- Building a practical pipeline with **real-world decision support value**
+- Conducting a detailed feature importance comparison across models
+
+This project gave us hands-on experience with **end-to-end data science**, from hypothesis-driven EDA to model deployment thinking.
 
 ---
 
 ## 📂 Files
-- `main.ipynb`: Full notebook with EDA, visualizations, and model training
-- `train__dataset.csv`: Dataset used for training and evaluation
-- `README.md`: Project summary and instructions
+- `main.ipynb`: Complete code and analysis notebook  
+- `train__dataset.csv`: Cleaned dataset used  
+- `README.md`: Project summary (this file)
 
 ---
 
-## ✨ Future Work
-- Incorporate time-series forecasting for cancellation trends
-- Add text analysis (e.g. guest feedback)
-- Test deployment in a real-time hotel reservation system
+## 👥 Team Members
+- Swaminathan Navitraa (U2321255K)
+- Shruti Kannan 
 
 ---
 
-## 🧑‍💻 Author
-Swaminathan Navitraa (U2321255K)  
-Shruti Kannan 
-
----
 
 
