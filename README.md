@@ -1,4 +1,4 @@
-# sc1015-mini-project
+# SC1015 Mini Project
 # 🏨 Hotel Reservation Cancellation Prediction
 
 ## 📌 Project Overview
@@ -83,7 +83,7 @@ We evaluated five machine learning models:
 
 ## 🧑‍💻 Author
 Swaminathan Navitraa (U2321255K)  
-Shruti Kannan
+Shruti Kannan 
 
 ---
 
