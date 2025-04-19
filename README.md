@@ -99,7 +99,7 @@ This project gave us hands-on experience with **end-to-end data science**, from 
 
 ## 👥 Team Members
 - Swaminathan Navitraa (U2321255K)
-- Shruti Kannan 
+- Shruti Kannan (U2323443H)
 
 ---
 
