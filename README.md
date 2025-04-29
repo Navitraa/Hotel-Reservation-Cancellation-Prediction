@@ -1,7 +1,6 @@
-# SC1015 Mini Project
 # 🏨 Hotel Reservation Cancellation Prediction
 
-## ✅ 1. Problem Definition 
+## 1. Problem Definition 
 Our group defined the problem of predicting hotel reservation cancellations using a real-world dataset of 18,000+ bookings.  
 Instead of merely describing booking trends, we **framed a predictive classification problem**:  
 > *Can we predict whether a hotel reservation will be cancelled, using only features available at the time of booking?*
@@ -10,7 +9,7 @@ This business-focused problem allows for actionable strategies in overbooking, s
 
 ---
 
-## 🧹 2. Data Preparation & Cleaning
+## 2. Data Preparation & Cleaning
 We used a dataset with 18 variables related to guest bookings. Key cleaning steps included:
 - **Dropping missing values** (resulting in 18,137 clean records)
 - **Encoding categorical variables** for model compatibility
@@ -21,7 +20,7 @@ These steps ensured the dataset was suitable for both statistical testing and ma
 
 ---
 
-## 📊 3. Exploratory Data Analysis & Visualization 
+## 3. Exploratory Data Analysis & Visualization 
 We explored and visualized multiple patterns related to cancellations:
 - **Lead time**: Longer lead times = higher cancellation rates  
 - **Special requests**: More requests = fewer cancellations  
@@ -33,7 +32,7 @@ Statistical tests (Spearman, Chi-Square, and Cramér’s V) were also applied to
 
 ---
 
-## 🤖 4. Machine Learning Techniques 
+## 4. Machine Learning Techniques 
 We implemented and compared **five classification models**:
 - Decision Tree  
 - Linear Regression (adapted for binary outcomes)  
@@ -53,7 +52,7 @@ We used ROC and Precision-Recall curves for performance evaluation. The top 3 pr
 
 ---
 
-## 📌 5. Data-Driven Insights & Recommendations 
+## 5. Data-Driven Insights & Recommendations 
 Our analysis revealed actionable insights:
 - **Longer lead times** → higher risk of cancellations  
 - **Guests with special requests** are less likely to cancel  
@@ -67,7 +66,7 @@ Our analysis revealed actionable insights:
 
 ---
 
-## 🎤 6. Final Presentation & Overall Quality 
+## 6. Final Presentation & Overall Quality 
 We delivered a concise 10-minute presentation covering:
 - Problem framing  
 - Data exploration  
@@ -79,7 +78,7 @@ Presentation was supported by visuals, clean plots, and a structured narrative a
 
 ---
 
-## 🚀 7. Learning & Going Beyond 
+## 7. Learning & Going Beyond 
 As a team, we went beyond course requirements by:
 - **Applying three statistical tests** to strengthen EDA (Spearman, Chi-Square, Cramér’s V)
 - Using **multiple evaluation metrics** beyond accuracy (precision, recall, AUC)  
@@ -90,14 +89,14 @@ This project gave us hands-on experience with **end-to-end data science**, from 
 
 ---
 
-## 📂 Files
+## Files
 - `main.ipynb`: Complete code and analysis notebook  
 - `train__dataset.csv`: Cleaned dataset used  
 - `README.md`: Project summary (this file)
 
 ---
 
-## 👥 Team Members
+## Team Members
 - Swaminathan Navitraa (U2321255K)
 - Shruti Kannan (U2323443H)
 
